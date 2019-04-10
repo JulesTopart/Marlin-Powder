@@ -62,7 +62,7 @@
 // #define CUSTOM_MENDEL_NAME "This Mendel"
 
 // This defines the number of extruders
-#define EXTRUDERS 1
+#define EXTRUDERS 2
 
 //// The following define selects which power supply you have. Please choose the one that matches your setup
 // 1 = ATX
@@ -152,8 +152,8 @@
 // The minimal temperature defines the temperature below which the heater will not be enabled It is used
 // to check that the wiring to the thermistor is not broken.
 // Otherwise this would lead to the heater being powered on all the time.
-#define HEATER_0_MINTEMP 5
-#define HEATER_1_MINTEMP 5
+#define HEATER_0_MINTEMP -17
+#define HEATER_1_MINTEMP -17
 #define HEATER_2_MINTEMP 5
 #define BED_MINTEMP 5
 
@@ -253,7 +253,7 @@
 //===========================================================================
 
 // Uncomment the following line to enable CoreXY kinematics
-// #define COREXY
+#define COREXY
 
 // coarse Endstop Settings
 #define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
@@ -278,9 +278,9 @@
 #endif
 
 // The pullups are needed if you directly connect a mechanical endswitch between the signal and ground pins.
-const bool X_ENDSTOPS_INVERTING = false; // set to true to invert the logic of the endstops.
-const bool Y_ENDSTOPS_INVERTING = false; // set to true to invert the logic of the endstops.
-const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of the endstops.
+const bool X_ENDSTOPS_INVERTING = true; // set to true to invert the logic of the endstops.
+const bool Y_ENDSTOPS_INVERTING = true; // set to true to invert the logic of the endstops.
+const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of the endstops.
 //#define DISABLE_MAX_ENDSTOPS
 //#define DISABLE_MIN_ENDSTOPS
 
@@ -298,14 +298,14 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 // Disables axis when it's not being used.
 #define DISABLE_X false
 #define DISABLE_Y false
-#define DISABLE_Z true
+#define DISABLE_Z false
 #define DISABLE_E false // For all extruders
 
-#define INVERT_X_DIR true    // for Mendel set to false, for Orca set to true
-#define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
-#define INVERT_Z_DIR true     // for Mendel set to false, for Orca set to true
+#define INVERT_X_DIR false    // for Mendel set to false, for Orca set to true
+#define INVERT_Y_DIR true    // for Mendel set to true, for Orca set to false
+#define INVERT_Z_DIR false     // for Mendel set to false, for Orca set to true
 #define INVERT_E0_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
-#define INVERT_E1_DIR false    // for direct drive extruder v9 set to true, for geared extruder set to false
+#define INVERT_E1_DIR true    // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E2_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 
 // ENDSTOP SETTINGS:
@@ -317,9 +317,9 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 #define min_software_endstops true // If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 // Travel limits after homing
-#define X_MAX_POS 205
+#define X_MAX_POS 200
 #define X_MIN_POS 0
-#define Y_MAX_POS 205
+#define Y_MAX_POS 90
 #define Y_MIN_POS 0
 #define Z_MAX_POS 200
 #define Z_MIN_POS 0
@@ -345,7 +345,7 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7402,78.7402,200.0*8/3,PRINTING_DPI / 25.4}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7402,78.7402,1000.0,PRINTING_DPI / 25.4}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {600, 600, 5, 600}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {7000,7000,100,7000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 

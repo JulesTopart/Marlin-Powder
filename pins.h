@@ -617,11 +617,11 @@
 
 
 #ifdef HPC6602
-    #define INK_PINA 66
-    #define INK_PINB 65
-    #define INK_PINC 64
-    #define INK_PIND 63
-    #define INK_PULSE0 42
+    #define INK_PINA 53
+    #define INK_PINB 52
+    #define INK_PINC 51
+    #define INK_PIND 50
+    #define INK_PULSE0 49
 #endif
 
 #endif //MOTHERBOARD == 3 || MOTHERBOARD == 33 || MOTHERBOARD == 34 || MOTHERBOARD == 35 || MOTHERBOARD == 77
@@ -2113,4 +2113,3 @@
                         _E0_PINS _E1_PINS _E2_PINS             \
                         analogInputToDigitalPin(TEMP_0_PIN), analogInputToDigitalPin(TEMP_1_PIN), analogInputToDigitalPin(TEMP_2_PIN), analogInputToDigitalPin(TEMP_BED_PIN) }
 #endif
-

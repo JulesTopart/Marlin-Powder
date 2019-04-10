@@ -175,7 +175,7 @@
 #define X_HOME_RETRACT_MM 5 
 #define Y_HOME_RETRACT_MM 5 
 #define Z_HOME_RETRACT_MM 1 
-#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
+//#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
 
 #define AXIS_RELATIVE_MODES {false, false, false, false}
 
@@ -319,7 +319,7 @@ const unsigned int dropsegments=5; //everything with less than this number of st
 // the moves are than replaced by the firmware controlled ones.
 
 // #define FWRETRACT  //ONLY PARTIALLY TESTED
-#define MIN_RETRACT 0.1 //minimum extruded mm to accept a automatic gcode retraction attempt
+#define MIN_RETRACT 0.0 //minimum extruded mm to accept a automatic gcode retraction attempt
 
 
 //adds support for experimental filament exchange support M600; requires display

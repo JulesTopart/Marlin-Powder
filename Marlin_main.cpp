@@ -2345,7 +2345,7 @@ void prepare_move()
       #ifndef HPC6602
         plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[E_AXIS], feedrate/60, active_extruder);
       #else
-        if(strip_buffer < 4096 && active_extruder == 0) plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[X_AXIS], feedrate/60, active_extruder, strip_buffer);
+        if(strip_buffer < 4096 && active_extruder == 0) plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[E_AXIS], feedrate/60, active_extruder, strip_buffer);
         else plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[E_AXIS], feedrate/60, active_extruder);
         strip_buffer = 4096;
       #endif
@@ -2354,7 +2354,7 @@ void prepare_move()
     #ifndef HPC6602
       plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[E_AXIS], feedrate*feedmultiply/60/100.0, active_extruder);
     #else 
-      if(strip_buffer < 4096 && active_extruder == 0) plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[X_AXIS], feedrate*feedmultiply/60/100.0, active_extruder, strip_buffer);
+      if(strip_buffer < 4096 && active_extruder == 0) plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[E_AXIS], feedrate*feedmultiply/60/100.0, active_extruder, strip_buffer);
       else plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[E_AXIS], feedrate*feedmultiply/60/100.0, active_extruder);
       strip_buffer = 4096;
     #endif
@@ -2606,4 +2606,3 @@ bool setTargetedHotend(int code){
   }
   return false;
 }
-
